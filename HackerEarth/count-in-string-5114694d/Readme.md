@@ -1,8 +1,9 @@
 # Count in string
 
-- **Platform:** [HackerEarth](https://www.hackerearth.com/community/problem/algorithm/count-in-string-5114694d)
+- **Platform:** HackerEarth
 - **Difficulty:** Easy
 - **Track:** Basic Programming / Implementation / Basics of Implementation
+- **Problem Link:** [Count in string](https://www.hackerearth.com/community/problem/algorithm/count-in-string-5114694d)
 
 ## Problem Description
 
