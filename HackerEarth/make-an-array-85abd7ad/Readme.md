@@ -21,30 +21,65 @@ You can apply the following operation on B any number of times:
 4. In each operation, we can leave at most one element un-incremented. Thus, no element in A can be strictly greater than the total number of operations `k`.
 5. If any element `A[i] > k`, it is impossible to form that value, so return `-1`. Otherwise, return `k`.
 
-## Solution (Python 3)
+## Solution (Java 8)
 
-```python
-def solve(N, A):
-    total_sum = sum(A)
-    max_element = max(A)
-    
-    # Each operation increases the sum by N - 1
-    if total_sum % (N - 1) != 0:
-        return -1
-        
-    k = total_sum // (N - 1)
-    
-    # No element can be greater than the total number of operations k
-    if k >= max_element:
-        return k
-    else:
-        return -1
+```java
+import java.io.*;
+import java.util.*;
 
-# Input processing
-if __name__ == "__main__":
-    N = int(input())
-    A = list(map(int, input().split()))
-    out_ = solve(N, A)
-    print(out_)
+public class MakeAnArray {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        PrintWriter wr = new PrintWriter(System.out);
+        int T = Integer.parseInt(br.readLine().trim());
+        for(int t_i = 0; t_i < T; t_i++)
+        {
+            int N = Integer.parseInt(br.readLine().trim());
+            String[] arr_A = br.readLine().split(" ");
+            int[] A = new int[N];
+            for(int i_A = 0; i_A < arr_A.length; i_A++)
+            {
+                A[i_A] = Integer.parseInt(arr_A[i_A]);
+            }
+
+            int out_ = solve(N, A);
+            System.out.println(out_);
+
+        }
+
+        wr.close();
+        br.close();
+    }
+
+    static int solve(int N, int[] A){
+        if (N == 1) {
+            return (A[0] == 0) ? 0 : -1;
+        }
+
+        long totalSum = 0;
+        int maxElement = 0;
+
+        for (int i = 0; i < N; i++) {
+            totalSum += A[i];
+            if (A[i] > maxElement) {
+                maxElement = A[i];
+            }
+        }
+
+        if (totalSum % (N - 1) != 0) {
+            return -1;
+        }
+
+        long k = totalSum / (N - 1);
+
+        if (k >= maxElement) {
+            return (int) k;
+        } else {
+            return -1;
+        }
+    }
+}
+
+
 ```
 
