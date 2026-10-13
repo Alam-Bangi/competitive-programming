@@ -11,7 +11,7 @@ The task is to find the **minimum number of coins** required to make all the ele
 * **Platform:** HackerEarth
 * **Track:** Basic Programming / Bit Manipulation / Basics of Bit Manipulation
 * **Difficulty:** Easy
-* **Problem Link:** [Equal elements](https://hackerearth.com)
+* **Problem Link:** [Equal elements](https://www.hackerearth.com/community/problem/algorithm/equal-elements-2-db70c1ae)
 
 ---
 
